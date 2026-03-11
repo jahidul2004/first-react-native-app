@@ -4,6 +4,7 @@ import FlexCards from './components/FlexCards';
 import ElevetedCards from './components/ElevetedCards';
 import BlogCards from './components/BlogCards';
 import ReviewCard from './components/ReviewCard';
+import ContactList from './components/ContactList';
 
 const App = () => {
   return (
@@ -17,6 +18,9 @@ const App = () => {
 
       {/* Review cards */}
       <ReviewCard />
+
+      {/* Contact List */}
+      <ContactList />
     </ScrollView>
   );
 };

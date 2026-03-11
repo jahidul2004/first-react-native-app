@@ -1,7 +1,24 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  Linking,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 
 export default function BlogCards() {
+  const handleLinking = (link: string): void => {
+    Linking.openURL(link).catch(err =>
+      console.error('Failed to open URL:', err),
+    );
+  };
+
+  const handleAlert = (message: string): void => {
+    // eslint-disable-next-line no-alert
+    alert(message);
+  };
   return (
     <View>
       <Text style={styles.headingText}>BlogCards</Text>
@@ -21,7 +38,10 @@ export default function BlogCards() {
             iusto corporis vero perferendis minus exercitationem voluptatibus ea
             consequuntur aliquid dignissimos?
           </Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleLinking('https://example.com/blog1')}
+          >
             <Text style={styles.buttonText}>Read More...</Text>
           </TouchableOpacity>
         </View>
@@ -40,7 +60,7 @@ export default function BlogCards() {
             iusto corporis vero perferendis minus exercitationem voluptatibus ea
             consequuntur aliquid dignissimos?
           </Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={() => handleAlert('This is a simple alert!')}>
             <Text style={styles.buttonText}>Read More...</Text>
           </TouchableOpacity>
         </View>
